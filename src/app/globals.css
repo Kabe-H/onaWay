@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "coolvetica compressed";
+  font-weight: 900;
+  src: local("Coolvetica"),
+    url(../Theme/Fonts/Coolvetica/coolvetica\ compressed\ hv.otf)
+      format("opentype");
+}
+
+@font-face {
+  font-family: "coolvetica condensed";
+  font-weight: 900;
+  src: local("Coolvetica"),
+    url(../Theme/Fonts/Coolvetica/coolvetica\ condensed\ rg.otf)
+      format("opentype");
+}
+
+@font-face {
+  font-family: "coolvetica crammed";
+  font-weight: 900;
+  src: local("Coolvetica"),
+    url(../Theme/Fonts/Coolvetica/coolvetica\ crammed\ rg.otf)
+      format("opentype");
+}
+
+@font-face {
+  font-family: "coolvetica rg";
+  font-weight: 900;
+  src: local("Coolvetica"),
+    url(../Theme/Fonts/Coolvetica/coolvetica\ rg.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "coolvetica rg it";
+  font-weight: 900;
+  src: local("Coolvetica"),
+    url(../Theme/Fonts/Coolvetica/coolvetica\ rg\ it.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "coolvetica compressed";
+  font-weight: 900;
+  src: local("Coolvetica"),
+    url(../Theme/Fonts/Coolvetica/coolvetica\ compressed\ hv.otf)
+      format("opentype");
+}
