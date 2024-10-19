@@ -11,7 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
 const menuExcursiones = [
@@ -29,7 +29,12 @@ const itemMenu = [
 ];
 
 export default function Header() {
-  const isDesktop = useMediaQuery("(min-width:1024px)");
+  const isDesktopQuery = useMediaQuery("(min-width:1024px)");
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    setIsDesktop(isDesktopQuery);
+  }, [isDesktopQuery]);
 
   const [anchorElMobile, setAnchorElMobile] = useState<null | HTMLElement>(
     null
@@ -102,6 +107,12 @@ export default function Header() {
               anchorEl={anchorElTraslado}
               open={openTraslado}
               onClose={handleCloseTraslado}
+              sx={{
+                "& .MuiPaper-root": {
+                  backgroundColor: "#9c4645",
+                  color: "#ffffff",
+                },
+              }}
             >
               <MenuItem
                 onClick={() => {
@@ -115,7 +126,9 @@ export default function Header() {
           </Grid>
           <Grid item xl={3}>
             <Button
-              sx={{ height: "40px" }}
+              sx={{
+                height: "40px",
+              }}
               onClick={handleClickExcursiones}
               aria-controls={openExcursiones ? "basic-menu" : undefined}
               aria-haspopup="true"
@@ -127,6 +140,10 @@ export default function Header() {
               anchorEl={anchorElExcursiones}
               open={openExcursiones}
               onClose={handleCloseExcursiones}
+              sx={{ "& .MuiPaper-root": {
+                backgroundColor: "#9c4645",
+                color: "#ffffff",
+              },}}
             >
               {menuExcursiones.map((dato) => (
                 <MenuItem

@@ -14,9 +14,6 @@ const images = [
   "/ImageSideBar/Baner8.jpg",
   "/ImageSideBar/Baner9.jpg",
   "/ImageSideBar/Baner10.jpg",
-  "/ImageSideBar/Baner11.jpg",
-  "/ImageSideBar/Baner12.jpg",
-  "/ImageSideBar/Baner13.jpg",
 ];
 
 export default function SiderBar() {
@@ -44,7 +41,7 @@ export default function SiderBar() {
       sx={{
         position: "relative",
         width: "100%",
-        height: { xs: 300, sm: 400, md: 500, xl: 1000 },
+        height: { xs: 300, sm: 400, md: 500, xl: 550 },
         display: "flex",
         alignItems: "center",
         justifyContent: "center"

@@ -1,40 +1,56 @@
 "use client";
-import { Grid, Typography, useMediaQuery } from "@mui/material";
+import { Grid, IconButton, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const isDesktop = useMediaQuery("(min-width:1024px)");
+  const isDesktopQuery = useMediaQuery("(min-width:1024px)");
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    setIsDesktop(isDesktopQuery);
+  }, [isDesktopQuery]);
 
   return isDesktop ? (
     <Grid container spacing={1} component="footer">
       <Grid item xs={6} xl={4} component="section">
         <Grid container>
           <Grid item xl={2}>
-            <Image
-              src="/LogoRedes/logoInstagram.png"
-              alt="logoInstagram"
-              width={50}
-              height={50}
-              priority
-            />
+            <IconButton
+              onClick={() => window.open("https://www.instagram.com/onawaytransfer/")}
+            >
+              <Image
+                src="/LogoRedes/logoInstagram.png"
+                alt="logoInstagram"
+                width={50}
+                height={50}
+                priority
+              />{" "}
+            </IconButton>
           </Grid>
           <Grid item xl={2}>
-            <Image
-              src="/LogoRedes/logoFacebook.png"
-              alt="logoFacebook"
-              width={50}
-              height={50}
-              priority
-            />
+            <IconButton
+              onClick={() => window.open("https://www.instagram.com")}
+            >
+              <Image
+                src="/LogoRedes/logoFacebook.png"
+                alt="logoFacebook"
+                width={50}
+                height={50}
+                priority
+              />
+            </IconButton>
           </Grid>
           <Grid item xl={2}>
-            <Image
-              src="/LogoRedes/logoYouTube.png"
-              alt="logoYouTube"
-              width={50}
-              height={50}
-              priority
-            />
+            <IconButton   onClick={() => window.open("https://www.youtube.com/@OnaWay-s8k")}>
+              <Image
+                src="/LogoRedes/logoYouTube.png"
+                alt="logoYouTube"
+                width={50}
+                height={50}
+                priority
+              />
+            </IconButton>
           </Grid>
           <Grid item xl={12}>
             <Image
@@ -54,7 +70,7 @@ export default function Footer() {
               <b>Contactos:</b>
             </Typography>
             <Typography color="primary" sx={{ fontSize: "15px" }}>
-              <b>onaweyturismo@gmail.com</b>
+              <b>onawayturismo@gmail.com</b>
             </Typography>
             <Typography color="primary" sx={{ fontSize: "15px" }}>
               <b>@onawey</b>
@@ -68,10 +84,10 @@ export default function Footer() {
               <b> Horarios de atención:</b>
             </Typography>
             <Typography color="primary" sx={{ fontSize: "15px" }}>
-              <b>Lunes a sábado</b>
+              <b>Lunes a Domingos </b>
             </Typography>
             <Typography color="primary" sx={{ fontSize: "15px" }}>
-              <b>09:00hs a 19:00hs</b>
+              <b>08:00hs a 22:00hs</b>
             </Typography>
             <Typography sx={{ fontSize: "20px" }}>
               <b>Ushuaia Argentina</b>
@@ -126,29 +142,35 @@ export default function Footer() {
             />
           </Grid>
           <Grid item xs={7}>
-            <Image
-              src="/LogoRedes/logoInstagram.png"
-              alt="Vercel Logo"
-              width={40}
-              height={40}
-              priority
-            />
-
-            <Image
-              src="/LogoRedes/logoFacebook.png"
-              alt="Vercel Logo"
-              width={40}
-              height={40}
-              priority
-            />
-
-            <Image
-              src="/LogoRedes/logoYouTube.png"
-              alt="Vercel Logo"
-              width={40}
-              height={40}
-              priority
-            />
+            <IconButton onClick={() => console.log("trolo")}>
+              <Image
+                src="/LogoRedes/logoInstagram.png"
+                alt="Vercel Logo"
+                width={40}
+                height={40}
+                priority
+              />
+            </IconButton>
+            <IconButton
+              onClick={() => window.open("https://www.instagram.com")}
+            >
+              <Image
+                src="/LogoRedes/logoFacebook.png"
+                alt="Vercel Logo"
+                width={40}
+                height={40}
+                priority
+              />
+            </IconButton>
+            <IconButton onClick={() => console.log("trolo")}>
+              <Image
+                src="/LogoRedes/logoYouTube.png"
+                alt="Vercel Logo"
+                width={40}
+                height={40}
+                priority
+              />
+            </IconButton>
           </Grid>
         </Grid>
       </Grid>

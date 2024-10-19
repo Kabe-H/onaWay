@@ -3,10 +3,16 @@ import { IMiCard } from "@/models/MiCardModel";
 import { Box, Button, Divider, Grid, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function MiCard(props: { element: IMiCard[] }) {
-  const isDesktop = useMediaQuery("(min-width:1024px)");
   const router = useRouter();
+  const isDesktopQuery = useMediaQuery("(min-width:1024px)");
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    setIsDesktop(isDesktopQuery);
+  }, [isDesktopQuery]);
 
   return isDesktop ? (
     <Box

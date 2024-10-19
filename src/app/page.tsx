@@ -3,6 +3,7 @@ import SiderBar from "@/components/SideBar/SiderBar";
 import { IMiCard } from "@/models/MiCardModel";
 import { Grid, Typography } from "@mui/material";
 import styles from "./page.module.css";
+import MiButtonWhatsApp from "@/components/UI/MiButtonWhatsApp/MiButtonWhatsApp";
 
 export default function Home() {
   const image: IMiCard[] = [
@@ -48,16 +49,19 @@ export default function Home() {
       <Grid container>
         <MiCard element={image} />
       </Grid>
-      <div className={styles.videoContainer}>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/8YNBA5LauE0"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
+      <Grid item xs={12}>
+        <div className={styles.videoContainer}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/8YNBA5LauE0?autoplay=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </Grid>
+      <MiButtonWhatsApp />
     </main>
   );
 }
