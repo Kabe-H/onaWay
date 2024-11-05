@@ -25,7 +25,7 @@ export default function Footer() {
                 width={50}
                 height={50}
                 priority
-              />{" "}
+              />
             </IconButton>
           </Grid>
           <Grid item xl={2}>

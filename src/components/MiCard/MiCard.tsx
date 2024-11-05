@@ -28,6 +28,7 @@ export default function MiCard(props: { element: IMiCard[] }) {
         <Grid
           item
           xs={12}
+          md={5.7}
           xl={5.8}
           sx={{
             width: "100%",
@@ -62,9 +63,9 @@ export default function MiCard(props: { element: IMiCard[] }) {
           top: "35%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          display: { xs: "none", xl: "block" },
+          display: { xs: "none", md:"block", xl: "block" },
         }}
-      >
+      >        
         <Image
           width={400}
           height={550}

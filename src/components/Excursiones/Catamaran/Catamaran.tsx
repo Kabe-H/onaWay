@@ -107,7 +107,7 @@ export default function Catamaran() {
         />
       </Grid>
       {excursionesImages.map((src, index) => (
-        <Grid item xs={12} xl={3} key={index}>
+        <Grid item xs={12} md={3} xl={3} key={index}>
           <Image
             src={src}
             alt={`Excursiones Catamaran ${index + 1}`}
