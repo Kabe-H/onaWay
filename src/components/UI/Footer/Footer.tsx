@@ -1,5 +1,10 @@
 "use client";
-import { Grid, IconButton, Typography, useMediaQuery } from "@mui/material";
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery
+} from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -16,8 +21,10 @@ export default function Footer() {
       <Grid item xs={6} xl={4} component="section">
         <Grid container>
           <Grid item xl={2}>
-            <IconButton
-              onClick={() => window.open("https://www.instagram.com/onawaytransfer/")}
+            <Button
+              onClick={() =>
+                window.open("https://www.instagram.com/onawaytransfer/")
+              }
             >
               <Image
                 src="/LogoRedes/logoInstagram.png"
@@ -26,12 +33,10 @@ export default function Footer() {
                 height={50}
                 priority
               />
-            </IconButton>
+            </Button>
           </Grid>
           <Grid item xl={2}>
-            <IconButton
-              onClick={() => window.open("https://www.instagram.com")}
-            >
+            <Button onClick={() => window.open("https://www.instagram.com")}>
               <Image
                 src="/LogoRedes/logoFacebook.png"
                 alt="logoFacebook"
@@ -39,10 +44,12 @@ export default function Footer() {
                 height={50}
                 priority
               />
-            </IconButton>
+            </Button>
           </Grid>
           <Grid item xl={2}>
-            <IconButton   onClick={() => window.open("https://www.youtube.com/@OnaWay-s8k")}>
+            <Button
+              onClick={() => window.open("https://www.youtube.com/@OnaWay-s8k")}
+            >
               <Image
                 src="/LogoRedes/logoYouTube.png"
                 alt="logoYouTube"
@@ -50,7 +57,7 @@ export default function Footer() {
                 height={50}
                 priority
               />
-            </IconButton>
+            </Button>
           </Grid>
           <Grid item xl={12}>
             <Image
@@ -142,7 +149,11 @@ export default function Footer() {
             />
           </Grid>
           <Grid item xs={7}>
-            <IconButton onClick={() => console.log("trolo")}>
+            <Button
+              onClick={() =>
+                window.open("https://www.instagram.com/onawaytransfer/")
+              }
+            >
               <Image
                 src="/LogoRedes/logoInstagram.png"
                 alt="Vercel Logo"
@@ -150,10 +161,8 @@ export default function Footer() {
                 height={40}
                 priority
               />
-            </IconButton>
-            <IconButton
-              onClick={() => window.open("https://www.instagram.com")}
-            >
+            </Button>
+            <Button onClick={() => window.open("https://www.instagram.com")}>
               <Image
                 src="/LogoRedes/logoFacebook.png"
                 alt="Vercel Logo"
@@ -161,8 +170,10 @@ export default function Footer() {
                 height={40}
                 priority
               />
-            </IconButton>
-            <IconButton onClick={() => console.log("trolo")}>
+            </Button>
+            <Button
+              onClick={() => window.open("https://www.youtube.com/@OnaWay-s8k")}
+            >
               <Image
                 src="/LogoRedes/logoYouTube.png"
                 alt="Vercel Logo"
@@ -170,7 +181,7 @@ export default function Footer() {
                 height={40}
                 priority
               />
-            </IconButton>
+            </Button>
           </Grid>
         </Grid>
       </Grid>

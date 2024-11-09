@@ -52,7 +52,7 @@ export default function SiderBar() {
         aria-label="previous"
         sx={{
           position: "absolute",
-          left: 16, // Espaciado adicional para escritorio
+          left: 16,
           top: "50%",
           transform: "translateY(-50%)",
           color: "white",

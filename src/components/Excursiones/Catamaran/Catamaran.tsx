@@ -1,5 +1,5 @@
 import { useLanguageStore } from "@/hooks/useLanguageStore/useLanguageStore";
-import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -52,7 +52,7 @@ export default function Catamaran() {
   const renderContent = (textArray: string[]) => (
     <Grid container spacing={2} sx={{ p: 3 }}>
       {textArray.map((text, index) => (
-        <Grid item xs={12} key={index}>
+        <Grid item xs={12} key={index + text.slice(0, 2)}>
           <Typography>{text}</Typography>
         </Grid>
       ))}
@@ -74,13 +74,24 @@ export default function Catamaran() {
   return (
     <Grid container alignContent="center" justifyContent="center" spacing={2}>
       <Grid item xs={12}>
-        <Image
-          src={isDesktop ? bannerImages.desktop : bannerImages.mobile}
-          alt="Excursiones CerroCastor"
-          width={isDesktop ? 1884 : 368}
-          height={isDesktop ? 837 : 270}
-          priority
-        />
+        <Box
+          sx={{
+            width: "100%",
+            height: "auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
+          }}
+        >
+          <Image
+            src={isDesktop ? bannerImages.desktop : bannerImages.mobile}
+            alt="Excursiones CerroCastor"
+            width={isDesktop ? 1884 : 368}
+            height={isDesktop ? 837 : 270}
+            priority
+          />
+        </Box>
       </Grid>
 
       <Grid item xs={12}>
@@ -107,14 +118,25 @@ export default function Catamaran() {
         />
       </Grid>
       {excursionesImages.map((src, index) => (
-        <Grid item xs={12} md={3} xl={3} key={index}>
-          <Image
-            src={src}
-            alt={`Excursiones Catamaran ${index + 1}`}
-            width={isDesktop ? 460 : 391}
-            height={isDesktop ? 300 : 255}
-            priority
-          />
+        <Grid item xs={12} md={3} xl={3} key={index + src}>
+          <Box
+            sx={{
+              width: "100%",
+              height: "auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              src={src}
+              alt={`Excursiones Catamaran ${index + 1}`}
+              width={460}
+              height={300}
+              priority
+            />
+          </Box>
         </Grid>
       ))}
     </Grid>

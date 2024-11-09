@@ -78,6 +78,7 @@ export default function MiCard(props: { element: IMiCard[] }) {
     <Box sx={{ width: "100%", overflowX: "hidden" }}>
       {props.element?.map((dato, index) => (
         <Grid item xs={12} key={dato.id}>
+          <Button onClick={()=>router.push(`/Excursiones/${dato.id}`)}>
           <Box
             component="img"
             src={dato.image}
@@ -89,6 +90,7 @@ export default function MiCard(props: { element: IMiCard[] }) {
               borderRadius: "15px",
             }}
           />
+          </Button>
           {index < props.element.length - 1 && (
             <Divider
               sx={{
