@@ -1,16 +1,29 @@
 "use client";
-import {
-  Button,
-  Grid,
-  Typography,
-  useMediaQuery
-} from "@mui/material";
+import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
   const isDesktopQuery = useMediaQuery("(min-width:1024px)");
   const [isDesktop, setIsDesktop] = useState(true);
+
+  const imagenesRedes = [
+    {
+      url: "https://www.instagram.com/onawaytransfer/",
+      image: "/Icons/logoInstagram(Peque).png",
+      alt: "logoInstagram",
+    },
+    {
+      url: "",
+      image: "/Icons/logoFacebook(Peque).png",
+      alt: "logoFacebook",
+    },
+    {
+      url: "https://www.youtube.com/@OnaWay-s8k",
+      image: "/Icons/logoYouTube(Peque).png",
+      alt: "logoYouTube",
+    },
+  ];
 
   useEffect(() => {
     setIsDesktop(isDesktopQuery);
@@ -149,39 +162,17 @@ export default function Footer() {
             />
           </Grid>
           <Grid item xs={7}>
-            <Button
-              onClick={() =>
-                window.open("https://www.instagram.com/onawaytransfer/")
-              }
-            >
-              <Image
-                src="/LogoRedes/logoInstagram.png"
-                alt="Vercel Logo"
-                width={40}
-                height={40}
-                priority
-              />
-            </Button>
-            <Button onClick={() => window.open("https://www.instagram.com")}>
-              <Image
-                src="/LogoRedes/logoFacebook.png"
-                alt="Vercel Logo"
-                width={40}
-                height={40}
-                priority
-              />
-            </Button>
-            <Button
-              onClick={() => window.open("https://www.youtube.com/@OnaWay-s8k")}
-            >
-              <Image
-                src="/LogoRedes/logoYouTube.png"
-                alt="Vercel Logo"
-                width={40}
-                height={40}
-                priority
-              />
-            </Button>
+            {imagenesRedes.map((data) => (
+              <Button key={data.alt} onClick={() => window.open(data.url)}>
+                <Image
+                  src={data.image}
+                  alt={data.alt}
+                  width={40}
+                  height={40}
+                  priority
+                />
+              </Button>
+            ))}
           </Grid>
         </Grid>
       </Grid>
