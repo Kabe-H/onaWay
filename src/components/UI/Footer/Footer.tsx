@@ -164,13 +164,7 @@ export default function Footer() {
           <Grid item xs={7}>
             {imagenesRedes.map((data) => (
               <Button key={data.alt} onClick={() => window.open(data.url)}>
-                <Image
-                  src={data.image}
-                  alt={data.alt}
-                  width={40}
-                  height={40}
-                  priority
-                />
+                <img src={data.image} alt={data.alt} width={40} height={40} />
               </Button>
             ))}
           </Grid>
