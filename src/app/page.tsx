@@ -1,7 +1,7 @@
 import MiCard from "@/components/MiCard/MiCard";
 import SiderBar from "@/components/SideBar/SiderBar";
 import { IMiCard } from "@/models/MiCardModel";
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import styles from "./page.module.css";
 import MiButtonWhatsApp from "@/components/UI/MiButtonWhatsApp/MiButtonWhatsApp";
 
@@ -50,16 +50,25 @@ export default function Home() {
         <MiCard element={image} />
       </Grid>
       <Grid item xs={12}>
-        <div className={styles.videoContainer}>
+        <Box
+          sx={{
+            width: "100%",
+            height: "auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
+          }}
+        >
           <iframe
-            width="560"
-            height="315"
+            width="98%"
+            height="800"
             src="https://www.youtube.com/embed/8YNBA5LauE0?autoplay=1"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-        </div>
+        </Box>
       </Grid>
       <MiButtonWhatsApp />
     </main>

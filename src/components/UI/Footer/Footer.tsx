@@ -10,17 +10,17 @@ export default function Footer() {
   const imagenesRedes = [
     {
       url: "https://www.instagram.com/onawaytransfer/",
-      image: "/Icons/logoInstagram(Peque).png",
+      image: "https://i.imgur.com/rQwVZzy.png",
       alt: "logoInstagram",
     },
     {
       url: "",
-      image: "/Icons/logoFacebook(Peque).png",
+      image: "https://i.imgur.com/a86HGcg.png",
       alt: "logoFacebook",
     },
     {
       url: "https://www.youtube.com/@OnaWay-s8k",
-      image: "/Icons/logoYouTube(Peque).png",
+      image: "https://i.imgur.com/U6FtgWA.png",
       alt: "logoYouTube",
     },
   ];
@@ -33,45 +33,19 @@ export default function Footer() {
     <Grid container spacing={1} component="footer">
       <Grid item xs={6} xl={4} component="section">
         <Grid container>
-          <Grid item xl={2}>
-            <Button
-              onClick={() =>
-                window.open("https://www.instagram.com/onawaytransfer/")
-              }
-            >
-              <Image
-                src="/LogoRedes/logoInstagram.png"
-                alt="logoInstagram"
-                width={50}
-                height={50}
-                priority
-              />
-            </Button>
-          </Grid>
-          <Grid item xl={2}>
-            <Button onClick={() => window.open("https://www.instagram.com")}>
-              <Image
-                src="/LogoRedes/logoFacebook.png"
-                alt="logoFacebook"
-                width={50}
-                height={50}
-                priority
-              />
-            </Button>
-          </Grid>
-          <Grid item xl={2}>
-            <Button
-              onClick={() => window.open("https://www.youtube.com/@OnaWay-s8k")}
-            >
-              <Image
-                src="/LogoRedes/logoYouTube.png"
-                alt="logoYouTube"
-                width={50}
-                height={50}
-                priority
-              />
-            </Button>
-          </Grid>
+          {imagenesRedes.map((data) => (
+            <Grid item xl={2} key={data.alt}>
+              <Button onClick={() => window.open(data.url)}>
+                <Image
+                  src={data.image}
+                  alt={data.alt}
+                  width={50}
+                  height={50}
+                  priority
+                />
+              </Button>
+            </Grid>
+          ))}
           <Grid item xl={12}>
             <Image
               src="/Icons/LogoOnaWayVariante.png"
@@ -164,7 +138,13 @@ export default function Footer() {
           <Grid item xs={7}>
             {imagenesRedes.map((data) => (
               <Button key={data.alt} onClick={() => window.open(data.url)}>
-                <img src={data.image} alt={data.alt} width={40} height={40} />
+                <Image
+                  src={data.image}
+                  alt={data.alt}
+                  width={40}
+                  height={40}
+                  priority
+                />
               </Button>
             ))}
           </Grid>
