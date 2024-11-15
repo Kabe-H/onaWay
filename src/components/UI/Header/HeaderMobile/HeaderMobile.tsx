@@ -35,9 +35,12 @@ export default function HeaderMobile(props: {
   const actionMenu = (dato: any, event: React.MouseEvent<HTMLElement>) => {
     if (dato.nombre === "Excursiones") {
       handleClickMenuExcursiones(event);
+    } else if (dato.nombre === "Traslado") {
+      router.push(`/Excursiones/6`);
     } else {
-      setAnchorElMobile(null);
+      window.open("https://wa.me/5492901650309?text=Hola");
     }
+    setAnchorElMobile(null);
   };
 
   return (
